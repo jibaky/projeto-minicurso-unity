@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyMovement : MonoBehaviour
 {
     public float velocity = 0.1f;
-    public bool walkRight = false;
+    public bool walkRight = true;
     // Update is called once per frame
     void Update()
     {
@@ -15,5 +15,8 @@ public class enemyMovement : MonoBehaviour
         else{
             gameObject.transform.position += gameObject.transform.right * velocity;
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision){
+        walkRight = !walkRight;
     }
 }
