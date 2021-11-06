@@ -11,7 +11,9 @@ public class gunController : MonoBehaviour
     void Update()
     {
         fireTimer += Time.deltaTime;
+        Debug.Log("firerate: "+fireRate+" firetimer: "+fireTimer);
         if(fireTimer > fireRate){
+            Debug.Log("entrou no if");
             if(Input.GetMouseButton(0)){
                 fireTimer = 0;
                 Instantiate(prefabTiro, gameObject.transform.position, gameObject.transform.rotation);
